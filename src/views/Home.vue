@@ -1,15 +1,17 @@
 <template>
-  <hello-world />
+  <v-container>
+    <portafolio />
+  </v-container>
 </template>
 
 <script>
-  import HelloWorld from '../components/HelloWorld'
+import Portafolio from "../components/portafolio.vue";
 
-  export default {
-    name: 'Home',
+export default {
+  name: "Home",
 
-    components: {
-      HelloWorld,
-    },
-  }
+  components: {
+    Portafolio,
+  },
+};
 </script>

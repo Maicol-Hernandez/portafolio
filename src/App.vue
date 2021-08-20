@@ -1,55 +1,67 @@
 <template>
   <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
+    <v-app-bar color="#00b0c7" prominent app dark>
+      <v-card color="#00b0c7" >
+        <v-card-title>
+          <v-toolbar-title
+            ><strong>Maicol Fernando Hernandez Peralta</strong></v-toolbar-title
+          >
+        </v-card-title>
+        <v-card-subtitle>
+          <span> Desarrollador Frontend </span>
+        </v-card-subtitle>
+      </v-card>
       <v-spacer></v-spacer>
+      <!--  -->
 
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
+      <div class="mt-5">
+        <v-menu bottom rounded max-width="200px" offset-y class="red">
+          <template v-slot:activator="{ on }">
+            <v-btn icon x-large v-on="on">
+              <v-avatar size="70">
+                <v-img :src="user.foto"></v-img>
+              </v-avatar>
+            </v-btn>
+          </template>
+          <v-card elevation="1">
+            <v-list-item-content class="justify-center">
+              <div class="mx-auto text-center">
+                <v-avatar>
+                  <v-img :src="user.foto"></v-img>
+                </v-avatar>
+
+                <h3>{{ user.nombreCompleto }}</h3>
+                <p class="text-caption mt-1">{{ user.email }}</p>
+
+                <v-divider class="my-3"></v-divider>
+                <v-btn depressed rounded text> Contactarme </v-btn>
+                <v-divider class="my-3"></v-divider>
+                <v-btn depressed rounded text> Email </v-btn>
+              </div>
+            </v-list-item-content>
+          </v-card>
+        </v-menu>
+      </div>
     </v-app-bar>
 
     <v-main>
-      <router-view/>
+      <router-view />
     </v-main>
   </v-app>
 </template>
 
 <script>
-
 export default {
-  name: 'App',
+  name: "App",
 
   data: () => ({
-    //
+    user: {
+      foto: require("@/assets/avatar_maicol.jpeg"),
+      email: "maicolhernandez420@gmail.com",
+      nombreCompleto: "Maicol Fernando Hernandez Peralta",
+      urlImg: require("@/assets/img_programming.jpg"),
+      profesion: "Tecnologo/ Analisis y Desarrollo de Sistemas de Informacion",
+    },
   }),
 };
 </script>
