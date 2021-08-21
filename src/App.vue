@@ -1,21 +1,28 @@
 <template>
   <v-app>
-    <v-app-bar color="#00b0c7" prominent app dark>
-      <v-card color="#00b0c7" >
-        <v-card-title>
-          <v-toolbar-title
-            ><strong>Maicol Fernando Hernandez Peralta</strong></v-toolbar-title
-          >
-        </v-card-title>
-        <v-card-subtitle>
-          <span> Desarrollador Frontend </span>
-        </v-card-subtitle>
+    <v-container fluid>
+      <v-card width="100%" tile>
+        <v-card-title> </v-card-title>
+      </v-card>
+    </v-container>
+
+    <v-app-bar app color="#00b0c7" prominent dark>
+      <v-card class="mt-1" tile color="#00b0c7" flat>
+        <v-row justify="center" align="center">
+          <v-col cols="12" sm="12">
+            <v-card-title>
+              <span>Maicol Fernando Hernandez Peralta</span>
+            </v-card-title>
+            <v-card-subtitle>
+              <span> Desarrollador Frontend </span>
+            </v-card-subtitle>
+          </v-col>
+        </v-row>
       </v-card>
       <v-spacer></v-spacer>
-      <!--  -->
 
       <div class="mt-5">
-        <v-menu bottom rounded max-width="200px" offset-y class="red">
+        <v-menu bottom rounded max-width="200px" offset-y>
           <template v-slot:activator="{ on }">
             <v-btn icon x-large v-on="on">
               <v-avatar size="70">
@@ -43,7 +50,6 @@
         </v-menu>
       </div>
     </v-app-bar>
-
     <v-main>
       <router-view />
     </v-main>
@@ -53,7 +59,6 @@
 <script>
 export default {
   name: "App",
-
   data: () => ({
     user: {
       foto: require("@/assets/avatar_maicol.jpeg"),
