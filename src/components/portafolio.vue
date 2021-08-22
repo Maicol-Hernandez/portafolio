@@ -62,9 +62,9 @@
             <strong>skillset</strong>
           </v-card-title>
           <v-card-text>
-            <v-row>
-              <v-col cols="2" v-for="img in imgsExperiencia" :key="img.nombre">
-                <v-avatar rounded size="90" class="color-avatar" color=" ">
+            <v-row dense>
+              <v-col v-for="img in imgsExperiencia" :key="img.id">
+                <v-avatar rounded size="90" class="color-avatar">
                   <v-img :src="img.foto"> </v-img>
                 </v-avatar>
               </v-col>
@@ -72,28 +72,25 @@
           </v-card-text>
         </v-col>
       </v-row>
+
       <!--  -->
-      <v-row class="info" justify="start">
+      <v-row class="info mb-1" justify="start">
         <v-col cols="12" align-self="start" class="d-flext">
-          <v-card-title class="text-uppercase justify-center">
+          <v-card-title class="text-uppercase white--text justify-center">
             <strong>Experiencia</strong>
           </v-card-title>
         </v-col>
       </v-row>
       <!--  -->
-    </v-card>
-
-    <!--  -->
-    <!-- <v-row justify="start" dense align="center" class="grey">
+      <!-- <v-row justify="center" class="warning">
         <v-col cols="12">
-          <v-card-title>
-            <strong>Experiencia</strong>
+          <v-card-title class="justify-center text-uppercase">
+            <strong>Contactarme</strong>
           </v-card-title>
         </v-col>
-
       </v-row> -->
-
-    <!--  -->
+      <!--  -->
+    </v-card>
   </v-container>
 </template>
 
@@ -109,19 +106,22 @@ export default {
     },
     imgsExperiencia: [
       {
+        id: 1,
         nombre: "Angular",
         foto: require("@/assets/Angularjs.png"),
       },
-      { nombre: "CSS", foto: require("@/assets/CSS.png") },
-      { nombre: "Javascript", foto: require("@/assets/Javascript.png") },
+      { id: 2, nombre: "CSS", foto: require("@/assets/CSS.png") },
+      { is: 3, nombre: "Javascript", foto: require("@/assets/Javascript.png") },
       {
+        id: 4,
         nombre: "Mysql Workbech",
         foto: require("@/assets/mysql_workbench.png"),
       },
-      { nombre: "Python", foto: require("@/assets/python.png") },
-      { nombre: "Vue2.js", foto: require("@/assets/vue2.png") },
-      { nombre: "Vuetify", foto: require("@/assets/vuetify.png") },
-      { nombre: "HTML", foto: require("@/assets/HTML.png") },
+      { id: 5, nombre: "Python", foto: require("@/assets/python.png") },
+      { id: 6, nombre: "Vue2.js", foto: require("@/assets/vue2.png") },
+      { id: 7, nombre: "Vuetify", foto: require("@/assets/vuetify.png") },
+      { id: 8, nombre: "HTML", foto: require("@/assets/HTML.png") },
+      { id: 9, nombre: "HTML", foto: require("@/assets/HTML.png") },
     ],
   }),
 };
@@ -129,8 +129,8 @@ export default {
 
 <style>
 .color-avatar {
-background: white;
-/* background: -webkit-linear-gradient(to right, #f09819, #ff512f);
+  background: white;
+  /* background: -webkit-linear-gradient(to right, #f09819, #ff512f);
   background: linear-gradient(to right, #f09819, #ff512f); */
 }
 .color-skills {

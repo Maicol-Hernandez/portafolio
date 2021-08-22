@@ -1,13 +1,8 @@
 <template>
   <v-app>
-    <v-container fluid>
-      <v-card width="100%" tile>
-        <v-card-title> </v-card-title>
-      </v-card>
-    </v-container>
-
-    <v-app-bar app color="#00b0c7" prominent dark>
-      <v-card class="mt-1" tile color="#00b0c7" flat>
+    <v-app-bar app color="#00b0c7" height="90" elevation="20" dark>
+      <v-app-bar-nav-icon></v-app-bar-nav-icon>
+      <v-card height="98" class="mb-2" tile color="#00b0c7" flat>
         <v-row justify="center" align="center">
           <v-col cols="12" sm="12">
             <v-card-title>
@@ -21,7 +16,7 @@
       </v-card>
       <v-spacer></v-spacer>
 
-      <div class="mt-5">
+      <div class="mb-1">
         <v-menu bottom rounded max-width="200px" offset-y>
           <template v-slot:activator="{ on }">
             <v-btn icon x-large v-on="on">
