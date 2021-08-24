@@ -1,21 +1,23 @@
 <template>
   <v-app>
-    <v-app-bar app color="#00b0c7" height="90" elevation="20" dark>
+    <v-app-bar app height="90" elevation="20" dark>
       <v-app-bar-nav-icon></v-app-bar-nav-icon>
-      <v-card height="98" class="mb-2" tile color="#00b0c7" flat>
-        <v-row justify="center" align="center">
+      <v-card height="98" class="mb-2" dark tile flat>
+        <v-row no-gutters dense>
           <v-col cols="12" sm="12">
-            <v-card-title>
-              <span>Maicol Fernando Hernandez Peralta</span>
+            <v-card-title class="">
+              <span>Maicol Hernandez Peralta</span>
             </v-card-title>
             <v-card-subtitle>
-              <span> Desarrollador Frontend </span>
+              <span>Desarrollador Frontend</span>
             </v-card-subtitle>
           </v-col>
         </v-row>
       </v-card>
       <v-spacer></v-spacer>
-
+      <v-btn icon class="mr-3" @click="modoOscuro" v-model="darkMode">
+        <v-icon>mdi-theme-light-dark</v-icon>
+      </v-btn>
       <div class="mb-1">
         <v-menu bottom rounded max-width="200px" offset-y>
           <template v-slot:activator="{ on }">
@@ -62,6 +64,18 @@ export default {
       urlImg: require("@/assets/img_programming.jpg"),
       profesion: "Tecnologo/ Analisis y Desarrollo de Sistemas de Informacion",
     },
+    darkMode: "",
   }),
+  watch: {
+    darkMode: function (val) {
+      console.log(val);
+    },
+  },
+  methods: {
+    modoOscuro: function (val) {
+      console.log(val);
+      return "red";
+    },
+  },
 };
 </script>
