@@ -1,14 +1,14 @@
 <template>
-  <v-container fluid>
-    <v-parallax dark height="100%" class="fondo-img" src="@/assets/img_fondo.jpg">
-      <!-- src="https://cdn.vuetifyjs.com/images/parallax/material2.jpg" -->
-      <!-- src="@/assets/img_fondo.jpg" -->
-      <portafolio />
-      <skillset />
-      <experiencia />
-      <footer-portafolio />
-    </v-parallax>
-  </v-container>
+  <!-- <div > -->
+  <v-card width="100%"  id="fondo-img">
+    <portafolio />
+    <!-- <hr> -->
+    <skillset />
+    <!-- <hr> -->
+    <experiencia />
+    <!-- <hr> -->
+    <footer-portafolio />
+  </v-card>
 </template>
 
 <script>
@@ -30,7 +30,10 @@ export default {
 </script>
 
 <style>
-/* .fondo-img {
-  background: url("../assets/img_fondo.jpg") no-repeat center center fixed;
-} */
+#fondo-img {
+  background-image: url("../assets/img_programming.png");
+  background-position: center, center !important;
+  background-size: cover !important ;
+  height: 100%;
+}
 </style>

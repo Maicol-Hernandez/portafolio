@@ -1,30 +1,51 @@
 <template>
   <v-container fluid>
-    <v-card dark flat tile class="text-center">
-      <v-row align="stretch" class="color-skills mb-1">
-        <v-col cols="12" align-self="start" class="d-flext">
-          <v-card-title
-            class="
-              white--text
-              font-weigth-bold
-              text-uppercase text-h4
-              justify-center
-            "
-          >
-            <strong>skillset</strong>
-          </v-card-title>
-          <v-card-text>
-            <v-row dense>
-              <v-col v-for="img in imgsExperiencia" :key="img.id">
-                <v-avatar rounded size="90" class="color-avatar">
-                  <v-img :src="img.foto"> </v-img>
-                </v-avatar>
-              </v-col>
-            </v-row>
-          </v-card-text>
-        </v-col>
-      </v-row>
-    </v-card>
+    <!-- <v-card  flat tile width="100%" class="text-center"> -->
+    <v-row class="mb-1" >
+      <v-col cols="12" lg="12" >
+        <v-card-title
+          class="
+            white--text
+            font-weigth-bold
+            text-uppercase text-h4
+            justify-center
+          "
+        >
+          <strong>skillset</strong>
+        </v-card-title>
+        <hr class="mb-5" />
+        <v-card-text>
+          <v-row dense justify="start">
+            <v-col
+              v-for="img in imgsExperiencia"
+              :key="img.id"
+              cols="6"
+              lg="3"
+              md="3"
+              sm="4"
+            >
+              <v-tooltip bottom>
+                <template v-slot:activator="{ on, attrs }">
+                  <v-row dense justify="center" class="my-2">
+                    <v-avatar
+                      v-on="on"
+                      v-bind="attrs"
+                      rounded
+                      size="110"
+                      class="color-avatar"
+                    >
+                      <v-img :src="img.foto"> </v-img>
+                    </v-avatar>
+                  </v-row>
+                </template>
+                <span>{{ img.nombre }}</span>
+              </v-tooltip>
+            </v-col>
+          </v-row>
+        </v-card-text>
+      </v-col>
+    </v-row>
+    <!-- </v-card> -->
   </v-container>
 </template>
 
@@ -50,7 +71,19 @@ export default {
       { id: 7, nombre: "Vuetify", foto: require("@/assets/vuetify.png") },
       { id: 8, nombre: "HTML", foto: require("@/assets/HTML.png") },
       { id: 9, nombre: "HTML", foto: require("@/assets/HTML.png") },
+      { id: 10, nombre: "HTML", foto: require("@/assets/HTML.png") },
     ],
   }),
 };
 </script>
+
+<style >
+.color-avatar {
+  background: white;
+  /* background: -webkit-linear-gradient(to right, #f09819, #ff512f);
+  background: linear-gradient(to right, #f09819, #ff512f); */
+}
+.color-skills {
+  background: #00b0c7;
+}
+</style>

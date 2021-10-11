@@ -1,57 +1,65 @@
 <template>
-  <v-footer dark padless>
-    <v-card tile flat class="indigo lighten-1 white--text text-center">
-      <v-card-title class="text-uppercase justify-center">
+  <v-footer dark width="100%" padless>
+    <v-card
+      tile
+      flat
+      width="100%"
+      class="  white--text text-center"
+    >
+      <v-card-title class="white--text
+            font-weigth-bold
+            text-uppercase text-h4
+            justify-center">
         <strong>Contactame</strong>
       </v-card-title>
+
       <v-card-text>
-        <v-btn v-for="icon in icons" :key="icon" class="mx-4 white--text" icon>
-          <v-icon size="24px">
-            {{ icon }}
-          </v-icon>
-        </v-btn>
-      </v-card-text>
-      <v-card-text class="white--text pt-0">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum minus
-        mollitia magnam vel hic quae exercitationem odit placeat. Earum cumque
-        eum pariatur officiis nobis cum harum a eveniet reiciendis mollitia.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error, enim
-        iste beatae officiis reprehenderit optio est adipisci culpa. Saepe quam
-        a explicabo quod dignissimos tempora ut nulla sequi magni repudiandae.
-        <v-form>
-          <v-container fluid>
-            <v-row no-gutters justify="center">
-              <v-col align-self="end" cols="12" md="5" lg="4">
-                <v-text-field label="Nombres"></v-text-field>
-                <v-text-field class="" label="Apellidos"></v-text-field>
-                <v-text-field label="E-mail"> </v-text-field>
-              </v-col>
-              <v-col cols="12" md="5" lg="5" align-self="end">
-                <v-row
-                  class="mb-1"
-                  style="height: 178px"
-                  dense
-                  justify-lg="center"
-                  justify-sm="center"
-                  justify-md="center"
-                >
-                  <v-col cols="12" class="ml-2" md="10" sm="12" lg="10">
-                    <v-textarea label="Nota"></v-textarea>
-                    <v-row
-                      justify-lg="end"
-                      justify-sm="center"
-                      justify-md="end"
-                    >
-                      <v-btn> Enviar </v-btn>
-                    </v-row>
-                  </v-col>
-                </v-row>
-              </v-col>
-            </v-row>
-          </v-container>
-        </v-form>
+        <v-tooltip v-for="icon in icons" :key="icon.id" bottom>
+          <template v-slot:activator="{ on, attrs }">
+            <v-btn v-on="on" v-bind="attrs" class="mx-4 white--text" icon>
+              <v-icon size="24px">
+                {{ icon.icon }}
+              </v-icon>
+            </v-btn>
+          </template>
+          <span>{{ icon.name }}</span>
+        </v-tooltip>
       </v-card-text>
 
+      <v-form>
+        <v-card-text class="white--text pt-0">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum minus
+          mollitia magnam vel hic quae exercitationem odit placeat. Earum cumque
+          eum pariatur officiis nobis cum harum a eveniet reiciendis mollitia.
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+          <v-row dense justify="center" class="mt-4">
+            <v-col cols="12" md="5" lg="4">
+              <v-text-field dense label="Nombres"></v-text-field>
+              <v-text-field dense label="Apellidos"></v-text-field>
+              <v-text-field dense label="E-mail"> </v-text-field>
+            </v-col>
+            <v-col cols="12" md="4" lg="4" align-self="end">
+              <v-textarea
+                outlined
+                class="mt-5"
+                auto-grow
+                row-height="20"
+                dense
+                label="Nota"
+                shaped
+              ></v-textarea>
+              <v-row
+                dense
+                justify-lg="end"
+                justify-sm="center"
+                justify-md="end"
+              >
+                <v-btn>Enviar</v-btn>
+              </v-row>
+            </v-col>
+          </v-row>
+        </v-card-text>
+      </v-form>
       <v-divider></v-divider>
       <v-card-text class="py-2 white--text" id="footer">
         Desarrollado y diseñado por Michael Fernando Hernandez Peralta. &copy;{{
@@ -66,7 +74,11 @@
 export default {
   name: "FooterPortafolio",
   data: () => ({
-    icons: ["mdi-github", "mdi-linkedin", "mdi-facebook"],
+    icons: [
+      { id: 1, icon: "mdi-github", name: "GitHub" },
+      { id: 2, icon: "mdi-linkedin", name: "Linkedin" },
+      { id: 3, icon: "mdi-facebook", name: "Facebook" },
+    ],
   }),
 };
 </script>
@@ -79,4 +91,29 @@ export default {
   /* background-color: #424242; */
   font-size: 0.75rem;
 }
+
+/* 
+      <v-card-text>
+        <v-row class="red" justify="center" dense>
+          <v-col
+            cols="12"
+            lg="1"
+            class="warning"
+            v-for="icon of icons"
+            :key="icon.id"
+          >
+            <v-tooltip bottom>
+              <template v-slot:activator="{ on, attrs }">
+                <v-btn v-on="on" v-bind="attrs" class="mx-4 white--text" icon>
+                  <v-icon size="24px">
+                    {{ icon.icon }}
+                  </v-icon>
+                </v-btn>
+              </template>
+              {{ icon.name }}
+            </v-tooltip>
+          </v-col>
+        </v-row>
+
+      </v-card-text> */
 </style>
