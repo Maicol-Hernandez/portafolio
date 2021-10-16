@@ -1,6 +1,6 @@
 <template>
   <!-- <div > -->
-  <v-card width="100%"  id="fondo-img">
+  <v-card width="100%"  dark id="fondo-img">
     <portafolio />
     <!-- <hr> -->
     <skillset />

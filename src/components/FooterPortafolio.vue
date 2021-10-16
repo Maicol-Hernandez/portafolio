@@ -1,15 +1,20 @@
 <template>
-  <v-footer dark width="100%" padless>
+  <v-footer dark color="rgba(12, 155, 155, 0.3)" width="100%" padless>
     <v-card
       tile
       flat
       width="100%"
-      class="  white--text text-center"
+      color="rgba(12, 155, 122, 0.1)"
+      class="white--text text-center"
     >
-      <v-card-title class="white--text
-            font-weigth-bold
-            text-uppercase text-h4
-            justify-center">
+      <v-card-title
+        class="
+          white--text
+          font-weigth-bold
+          text-uppercase text-h4
+          justify-center
+        "
+      >
         <strong>Contactame</strong>
       </v-card-title>
 
@@ -32,7 +37,7 @@
           mollitia magnam vel hic quae exercitationem odit placeat. Earum cumque
           eum pariatur officiis nobis cum harum a eveniet reiciendis mollitia.
           Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-          <v-row dense justify="center" class="mt-4">
+          <v-row class="mt-4" dense justify="center">
             <v-col cols="12" md="5" lg="4">
               <v-text-field dense label="Nombres"></v-text-field>
               <v-text-field dense label="Apellidos"></v-text-field>
