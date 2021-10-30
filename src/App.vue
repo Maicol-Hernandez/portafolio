@@ -17,6 +17,7 @@
       </template>
       <v-app-bar-nav-icon></v-app-bar-nav-icon>
       <v-app-bar-title
+      class=".text-caption"
         >Maicol Hernandez Peralta
 
         <p class="subtitle-1">Desarrollador Web</p>
