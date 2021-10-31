@@ -21,11 +21,16 @@
       <v-card-text>
         <v-tooltip v-for="icon in icons" :key="icon.id" bottom>
           <template v-slot:activator="{ on, attrs }">
-            <v-btn v-on="on" v-bind="attrs" class="mx-4 white--text" icon>
-              <v-icon size="24px">
+            <a :href="icon.link">
+            <v-btn  v-on="on" v-bind="attrs" class="mx-4 white--text" icon>
+              <v-icon  size="24px">
+                  
+              
                 {{ icon.icon }}
               </v-icon>
-            </v-btn>
+            </v-btn>        
+                  </a>
+            
           </template>
           <span>{{ icon.name }}</span>
         </v-tooltip>
@@ -80,9 +85,9 @@ export default {
   name: "FooterPortafolio",
   data: () => ({
     icons: [
-      { id: 1, icon: "mdi-github", name: "GitHub" },
+      { id: 1, icon: "mdi-github", name: "GitHub", link: "https://github.com/Maicol-Hernandez" },
       { id: 2, icon: "mdi-linkedin", name: "Linkedin" },
-      { id: 3, icon: "mdi-facebook", name: "Facebook" },
+      { id: 3, icon: "mdi-facebook", name: "Facebook", },
     ],
   }),
 };
