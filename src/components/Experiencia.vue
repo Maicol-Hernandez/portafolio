@@ -112,7 +112,7 @@
 export default {
   name: "Experiencia",
   data: () => ({
-    dialog: true,
+    dialog: false,
     maxWidth: 500,
   }),
 
